@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+
+        <!-- HOME PAGE -->
+        <section id="welcomeBox" class="screen welcome-screen">
+            <h1 id="pageHeading">ENTER THE WORLD OF QUIZ..!</h1>
+            <p class="subtitle">Ready to challenge yourself..?</p>
+            <button id="startBtn" class="primary-btn">Start Quiz</button>
+        </section>
+
+        <!-- QUIZ PAGE -->
+        <section id="quizBox" class="screen quiz-screen" hidden>
+
+            <div class="quiz-topline">
+                <span id="questionCount">Question 1 of 10</span>
+                <span class="timer-pill">
+                    Time Left: <strong id="timer">30</strong>s
+                </span>
+            </div>
+
+            <button id="quizHomeBtn" class="secondary-btn">🏠 Home</button>
+
+            <div class="progress-track">
+                <div id="progressBar" class="progress-fill"></div>
+            </div>
+
+            <h2 id="question">Question will appear here</h2>
+
+            <div id="options" class="options"></div>
+
+            <p id="feedback" class="feedback" aria-live="polite"></p>
+
+            <div class="quiz-footer">
+                <p class="score-line">
+                    Score: <strong id="score">0</strong>
+                </p>
+                <button id="nextBtn" class="primary-btn" hidden>
+                    Next Question
+                </button>
+            </div>
+        </section>
+
+        <!-- REVIEW PAGE -->
+        <section id="resultBox" class="screen result-screen" hidden>
+
+            <p class="eyebrow">QUIZ COMPLETED</p>
+            <h1 id="resultHeading">YOUR QUIZ REVIEW</h1>
+
+            <p id="finalScore" class="final-score"></p>
+            <p id="reviewMessage" class="review-message"></p>
+
+            <div class="result-actions">
+                <button id="playAgainBtn" class="primary-btn">
+                    🔄 Play Again
+                </button>
+
+                <button id="resultHomeBtn" class="secondary-btn">
+                    🏠 Home
+                </button>
+
+                <button id="exitBtn" class="secondary-btn">
+                    🚪 Exit
+                </button>
+            </div>
+        </section>
+
+        <!-- THANK YOU PAGE -->
+        <section id="thankYouBox" class="screen result-screen" hidden>
+
+            <p class="eyebrow">QUIZ FINISHED</p>
+
+            <h1>THANK YOU! 💗</h1>
+
+            <p class="subtitle">
+                Thank you for playing the Greeting Quiz!
+            </p>
+
+            <p class="review-message">
+                Hope you enjoyed the quiz.
+                Have a wonderful day!
+            </p>
+
+            <button id="thankYouHomeBtn" class="primary-btn">
+                🏠 Back to Home
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
